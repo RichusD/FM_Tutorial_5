@@ -128,14 +128,15 @@ const onClick = (event) => {
         } 
         
         //ERROR DETECTION
-        //Checks through various secenarios. The input type is set to number, so letters cannot be added, and so there's no error condition for it.
+        //Checks through various secenarios. The input type is set to number for , so letters cannot be added, and so there's no error condition for it.
         for (let i = 0; i < 3; i++){
             //--Empty Field
-            if (dateInput[i].value == ""){
-                errorWording[i].innerText = "This field is required"
+            if (dateInput[i].value === ""){
+                errorWording[i].innerText = "Invalid date"
                 applyError(i)
-            //--Input contains .+-
-            } else if (/[\.+-]/g.test(dateInput[i].value)){
+            //--Input contains something that isn't a number
+            //---This was initially added as I discovered you could still press letters on Firefox browsers. Letters appear to be caught by the empty field condition though, so I assume this still works fine.
+            } else if (dateInput[i].value % 1 !== 0){
                 errorWording[i].innerText = "Invalid date"
                 applyError(i)
             //--Number is 0 or below
