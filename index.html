@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+  <script src="scripts.js"></script>
+
+  <title>Frontend Mentor | Age calculator app</title>
+
+</head>
+<body>
+  <div id="main">
+    <div id="top-container">
+      <div id="day-container">
+        <p id="day-unit-text" class="unit-text">DAY</p>
+        <input id="day-input" class="input" type="number" placeholder="DD">
+        <p id="day-error-text" class="error">This field is required</p>
+      </div>
+      <div id="month-container">
+        <p id="month-unit-text" class="unit-text">MONTH</p>
+        <input id="month-input" class="input" type="number" placeholder="MM">
+        <p id="month-error-text" class="error">This field is required</p>
+      </div>
+      <div id="year-container">
+        <p id="year-unit-text" class="unit-text">YEAR</p>
+        <input id="year-input" class="input" type=numbert" placeholder="YYYY">
+        <p id="year-error-text" class="error">This field is required</p>
+      </div>
+      <div id="arrow-box">
+        <svg id="arrow-btn" class="" preserveAspectRatio="none"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 46 44">
+          <g stroke-width="2">
+            <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <hr>
+    <div id="bottom-container">
+      <h1><span id="active-years">--</span> years</h1>
+      <h1><span id="active-months">--</span> months</h1>
+      <h1><span id="active-days">--</span> days</h1>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://www.youtube.com/watch?v=ZZ5LpwO-An4&t=6s">King Biscuit</a>.
+  </div>
+</body>
+</html>

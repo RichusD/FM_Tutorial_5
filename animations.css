@@ -1,0 +1,36 @@
+/* Not to self: When working with SVGs, make sure width and height is removed from the HTML, otherwise it will override the CSS animation styling. */
+/* Cant use translateX or translateY as this resets the corresponding value to its default, which you don't want as it was set in the styles sheet */
+@keyframes rollDown {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        height: 90%;
+        width: 10%;
+        transform: translate(-50%, 150%);
+    }
+    51% {
+        opacity:0;
+        transform: translate(-50%, -200%);
+    }
+    52% {
+        opacity:1;
+    }
+
+    80% {
+        height: 50%;
+        width: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    95% {
+        height:48%;
+        transform: translate(-50%, -53%);
+    }
+
+    100% {
+        height: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

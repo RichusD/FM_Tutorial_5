@@ -1,0 +1,243 @@
+:root{
+    --bgGrey:#f0f0f0;
+    --purpCol: #864cff;
+    --redCol: #e25b60;
+    --txtGrey: #8b8b8b;
+}
+
+@font-face { 
+    font-family: Poppins; 
+    font-style: normal; 
+    font-weight: 200;
+    src: url(assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face { 
+    font-family: Poppins; 
+    font-style: italic; 
+    font-weight: 200;
+    src: url(assets/fonts/Poppins-Italic.ttf);
+}
+
+@font-face { 
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400; 
+    src: url(assets/fonts/Poppins-Bold.ttf);
+}
+
+@font-face { 
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700; 
+    src: url(assets/fonts/Poppins-ExtraBold.ttf);
+}
+
+@font-face { 
+    font-family: Poppins; 
+    font-weight: 700; 
+    font-style: italic;
+    src: url(assets/fonts/Poppins-ExtraBoldItalic.ttf);
+}
+
+/*##### RESETS #############################*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 32px;
+    color: #151515;
+}
+
+/*##### STYLES #############################*/
+
+body{
+    height: 100vh;
+    background-color: var(--bgGrey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-width: 312px;
+    max-width: 320px;
+    padding: 16px;
+    border-radius: 16px 16px 96px 16px;
+    transition: 0.4s 
+}
+
+.unit-text{
+    font-size: 0.3rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 3px;
+    color: var(--txtGrey);
+}
+.input{
+    display: block;
+    font-size: 0.4rem;
+    width:80%;
+    height:1rem;
+    border: 1px solid var(--bgGrey);
+    border-radius: 5px;
+    padding: 10px;
+    transition: border 0.2s;
+}
+
+.input:focus{
+    outline: none;
+    border: 1px solid var(--purpCol);
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+.error{
+    font-size: 0.2rem;
+    font-weight: 200;
+    font-style: italic;
+    color: var(--redCol);
+    margin-top: 2px;
+    display: none;
+}
+.box-error-state{
+    border: 1px solid var(--redCol);
+}
+.box-error-state::placeholder{
+    color: var(--redCol);
+}
+.unit-error-state{
+    color: var(--redCol);
+}
+
+
+#arrow-box{
+    background-color: var(--purpCol);
+    border-radius: 50%;
+    position: absolute;
+    padding: 20px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s, left 1s;
+    z-index: 1;
+    overflow: hidden;
+}
+#arrow-btn{
+    stroke: white;
+    width: 50%;
+    height: 50%;
+    fill: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+    z-index: 2;
+}
+#arrow-box:hover{
+    background-color: black;
+}
+#arrow-box:hover > #arrow-btn{
+    animation-name: rollDown;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#top-container{
+   display: flex;
+   align-items: space;
+   width: 100%;
+   padding: 20px 10px 30px 10px;
+   transition: 0.4s;
+}
+
+hr {
+    border: 1px solid var(--bgGrey);
+    position: absolute;
+    width: 80%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:0;
+    transition: 1s;
+}
+
+#bottom-container{
+    padding: 30px 10px 10px 10px;
+    transition: 0.5s;
+}
+
+#bottom-container h1,
+#bottom-container span{
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.3rem;
+    transition: 0.5s;
+}
+#bottom-container span{
+    color: var(--purpCol);
+}
+
+.attribution {
+    margin-top: 5px;
+    font-size: 0.2rem; 
+    text-align: center; 
+}
+.attribution a {
+    font-size: 0.2rem;
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 992px){
+
+    #main{
+        width: 100%;
+        max-width: 450px;
+    }
+
+    hr {
+        width: 86%;
+        left: 48%;
+    }
+
+    #top-container{
+        width: 80%;
+     }
+
+    #arrow-box{
+        top: 39%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+    }
+    #bottom-container h1,
+    #bottom-container span{
+
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    #bottom-container{
+        padding: 30px 10px 10px 10px;
+        
+    }
+    .error{
+        font-size: 0.3rem;
+        margin-top: 2px;
+
+    }
+
+
+}
